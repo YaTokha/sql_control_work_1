@@ -37,6 +37,13 @@ CREATE TABLE Appointments (
                               FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id)
 );
 
+-- Добавление записей в таблицу Клиники
+INSERT INTO Clinics (clinic_name, clinic_address, contact_number)
+VALUES
+    ('Клиника "Здоровье"', 'ул. Медицинская, 789', '+1112223333'),
+    ('Медицинский центр "Семейное здоровье"', 'пр. Здоровья, 456', '+4445556666'),
+    ('Офтальмологическая клиника "Вид"', 'ул. Глаза, 123', '+7778889999');
+
 -- Добавление записей в таблицу Пациенты
 INSERT INTO Patients (first_name, last_name, date_of_birth, address, phone_number, email, insurance_number)
 VALUES
@@ -56,12 +63,7 @@ VALUES
     ('Доктор', 'Козлова', 'Педиатр', 'D98765', 1),
     ('Доктор', 'Смирнов', 'Стоматолог', 'D13579', 2);
 
--- Добавление записей в таблицу Клиники
-INSERT INTO Clinics (clinic_name, clinic_address, contact_number)
-VALUES
-    ('Клиника "Здоровье"', 'ул. Медицинская, 789', '+1112223333'),
-    ('Медицинский центр "Семейное здоровье"', 'пр. Здоровья, 456', '+4445556666'),
-    ('Офтальмологическая клиника "Вид"', 'ул. Глаза, 123', '+7778889999');
+
 
 -- Добавление записей в таблицу Записи на прием
 INSERT INTO Appointments (patient_id, doctor_id, appointment_date_time, reason_for_visit, is_confirmed)
